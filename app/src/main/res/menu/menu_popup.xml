@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mAlerta"
+        android:title="Alerta"
+        android:orderInCategory="1"
+        >Alerta</item>
+
+    <item
+        android:id="@+id/mCalma"
+        android:title="Calma"
+        android:orderInCategory="2"
+        >Calma</item>
+
+   </menu>

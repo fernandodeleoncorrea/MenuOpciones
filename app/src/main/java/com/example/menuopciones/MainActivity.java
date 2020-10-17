@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,5 +74,31 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onContextItemSelected(item);
+    }
+
+    public void levantaPopUp(View v){
+        ImageView imagen = (ImageView) findViewById(R.id.imgFer);
+        PopupMenu popUpMenu = new PopupMenu(this, imagen);
+        popUpMenu.getMenuInflater().inflate(R.menu.menu_popup, popUpMenu.getMenu());
+
+        popUpMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mAlerta:
+                        Toast.makeText(MainActivity.this, "presiono alerts", Toast.LENGTH_LONG).show();
+                        //Intent intent = new Intent(MainActivity.this, ActivityAbout.class);
+                        break;
+
+                    case R.id.mCalma:
+                        Toast.makeText(MainActivity.this, "presiono calma", Toast.LENGTH_LONG).show();
+                        //ntent i = new Intent(MainActivity.this, ActivitySetings.class);
+                        break;
+                }
+                return true;
+            }
+        });
+        popUpMenu.show();
+
     }
 }
