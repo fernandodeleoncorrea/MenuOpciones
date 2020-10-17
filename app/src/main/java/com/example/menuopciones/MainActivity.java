@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mSetings:
                 Toast.makeText(MainActivity.this, "presiono settings", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(MainActivity.this, ActivitySetings.class);
-            break;
+            case R.id.mRefresh:
+                Toast.makeText(MainActivity.this, "presiono refresh", Toast.LENGTH_LONG).show();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
